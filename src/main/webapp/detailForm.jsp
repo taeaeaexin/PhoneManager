@@ -53,7 +53,7 @@
         <button onclick="location.href='/PhoneManager'">✖</button>
     </div>
 
-        <form action="/PhoneManager/Phones/insert" method="post">
+        <form action="/PhoneManager/Phones/update" method="post">
             <br>
             <div>
             <input type="text" name="phoneId" value="<%= phoneDto.getPhoneId() %>"></input>
@@ -74,12 +74,14 @@
             <div>
             <button type="submit" style="width: 77px; height: 33px;">수정</button>
         </form>
+
             <button onclick="window.location.href='/PhoneManager/Phones/delete?phoneId=<%= phoneDto.getPhoneId() %>'; return false;" style="width: 77px; height: 33px;">
                 삭제
             </button>
             <button onclick="window.location.href='/PhoneManager/Phones/list'; return false;" style="width: 77px; height: 33px;">
                 취소
             </button>
+            </div>
 
 </div>
 

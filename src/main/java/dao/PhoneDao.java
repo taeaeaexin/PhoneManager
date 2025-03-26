@@ -36,9 +36,9 @@ public class PhoneDao {
         return ret;
     }
 
-    public int updatePhone(PhoneDto Phone) {
+    public int updatePhone(PhoneDto phoneDto) {
         int ret = -1;
-        String sql = "update Phone set Phonename = ?, publisher = ?, price = ? where Phoneid = ?; ";
+        String sql = "UPDATE phone SET phonename=?, publisher=?, price=? WHERE phoneid=?; ";
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -47,11 +47,10 @@ public class PhoneDao {
             con = DBManager.getConnection();
 
             pstmt = con.prepareStatement(sql);
-
-            pstmt.setString(1, Phone.getPhoneName());
-            pstmt.setString(2, Phone.getPublisher());
-            pstmt.setInt(3, Phone.getPrice());
-            pstmt.setInt(4, Phone.getPhoneId());
+            pstmt.setString(1, phoneDto.getPhoneName());
+            pstmt.setString(2, phoneDto.getPublisher());
+            pstmt.setInt(3, phoneDto.getPrice());
+            pstmt.setInt(4, phoneDto.getPhoneId());
 
             ret = pstmt.executeUpdate();
 
@@ -66,7 +65,7 @@ public class PhoneDao {
 
     public int deletePhone(int PhoneId) {
         int ret = -1;
-        String sql = "delete from Phone where Phoneid = ?; ";
+        String sql = "delete from Phone where phoneid = ?; ";
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -103,8 +102,8 @@ public class PhoneDao {
             rs = pstmt.executeQuery();
             while(rs.next()) {
                 PhoneDto Phone = new PhoneDto();
-                Phone.setPhoneId(rs.getInt("Phoneid"));
-                Phone.setPhoneName(rs.getString("Phonename"));
+                Phone.setPhoneId(rs.getInt("phoneid"));
+                Phone.setPhoneName(rs.getString("phonename"));
                 Phone.setPublisher(rs.getString("publisher"));
                 Phone.setPrice(rs.getInt("price"));
                 list.add(Phone);
@@ -121,7 +120,7 @@ public class PhoneDao {
 
     public List<PhoneDto> listPhoneSearch(String searchWord) {
         List<PhoneDto> list = new ArrayList<>();
-        String sql = "select * from Phone where Phonename like ? ";
+        String sql = "select * from Phone where phonename like ? ";
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -135,8 +134,8 @@ public class PhoneDao {
             rs = pstmt.executeQuery();
             while(rs.next()) {
                 PhoneDto Phone = new PhoneDto();
-                Phone.setPhoneId(rs.getInt("Phoneid"));
-                Phone.setPhoneName(rs.getString("Phonename"));
+                Phone.setPhoneId(rs.getInt("phoneid"));
+                Phone.setPhoneName(rs.getString("phonename"));
                 Phone.setPublisher(rs.getString("publisher"));
                 Phone.setPrice(rs.getInt("price"));
                 list.add(Phone);
@@ -153,7 +152,7 @@ public class PhoneDao {
 
     public PhoneDto detailPhone(int Phoneid) {
         PhoneDto Phone = null;
-        String sql = "select * from Phone where Phoneid = ?; ";
+        String sql = "select * from Phone where phoneid = ?; ";
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -167,8 +166,8 @@ public class PhoneDao {
             rs = pstmt.executeQuery();
             if(rs.next()) {
                 Phone = new PhoneDto();
-                Phone.setPhoneId(rs.getInt("Phoneid"));
-                Phone.setPhoneName(rs.getString("Phonename"));
+                Phone.setPhoneId(rs.getInt("phoneid"));
+                Phone.setPhoneName(rs.getString("phonename"));
                 Phone.setPublisher(rs.getString("publisher"));
                 Phone.setPrice(rs.getInt("price"));
             }

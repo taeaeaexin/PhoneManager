@@ -65,7 +65,7 @@ public class PhoneServlet extends HttpServlet {
 
     protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PhoneDao phoneDao = new PhoneDao();
-        int phoneId = Integer.parseInt(request.getParameter("PhoneId"));
+        int phoneId = Integer.parseInt(request.getParameter("phoneId"));
         String phoneName = request.getParameter("phoneName");
         String publisher = request.getParameter("publisher");
         int price = Integer.parseInt(request.getParameter("price"));

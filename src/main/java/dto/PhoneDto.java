@@ -47,13 +47,13 @@ public class PhoneDto {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "PhoneDto{" +
-                "phoneId=" + phoneId +
-                ", phoneName='" + phoneName + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", price=" + price +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "PhoneDto{" +
+//                "phoneId=" + phoneId +
+//                ", phoneName='" + phoneName + '\'' +
+//                ", publisher='" + publisher + '\'' +
+//                ", price=" + price +
+//                '}';
+//    }
 }

@@ -76,6 +76,8 @@ public class PhoneServlet extends HttpServlet {
         System.out.println(ret);
         // if ( ret == 1 ) {} // 성공
         // else {} // 실패
+        System.out.println("Received phoneId: " + phoneId);  // 디버깅용
+
 
         request.getRequestDispatcher("/updateResult.jsp").forward(request, response);
     }

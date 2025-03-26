@@ -5,6 +5,12 @@ body {
     font-family: "MS Sans Serif", sans-serif;
 }
 
+a {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
 /* 바탕화면 */
 .desktop {
     display: flex;
@@ -21,8 +27,8 @@ body {
 }
 
 .icon img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     display: block;
     margin: 0;
     padding: 0;
@@ -31,11 +37,11 @@ body {
 .icon p {
     margin: 0;
     padding: 0;
-    margin-top : -18px;
+    margin-top : 3px;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
-    text-align: center;
+    text-align: left;
 }
 
 /* 작업표시줄 */
@@ -85,7 +91,7 @@ body {
 
 /* 창 */
 .window {
-    width: 500px;
+    width : 777px;
     background-color: #C0C0C0;
     position: absolute;
     top: 47%;
@@ -138,4 +144,35 @@ body {
     display: inline-block;
     width: 150px;
     height : auto;
+}
+
+button {
+    background-color: #C0C0C0;
+    border: none;
+    color: black;
+    cursor: pointer;
+    box-shadow: inset -2px -2px gray;
+    font-weight: bold;
+}
+
+table {
+    width : 666px;
+    text-align: center;
+}
+
+input {
+  width: 20em;
+  height: 2em;
+  border: 1px solid gray;
+  padding: 0px 10px;
+}
+
+input:focus {
+  border: 1px solid gray;
+  outline: 1px solid gray;
+}
+
+form {
+    margin-left : 50px;
+    margin-right : 50px;
 }
